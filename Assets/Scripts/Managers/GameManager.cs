@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manages game
+/// </summary>
 public class GameManager : MonoBehaviour
 {
 	public static GameManager instance;
 
-	List<ComicScene> comicScenes;
-	int comicNum = 0;
-	int sceneNum = 0;
+	List<Comic> comics;
+	public int comicNum = 0;
+	public int sceneNum = 0;
 
     void Start()
     {
@@ -20,33 +23,45 @@ public class GameManager : MonoBehaviour
 		}
 
 		// Init
-		comicScenes = new List<ComicScene>();
+		comics = new List<Comic>();
 
 		// Load all comics
 		foreach(Transform child in GameObject.Find("Comics").transform){
-			comicScenes.Add(child.GetComponent<ComicScene>());
+			comics.Add(child.GetComponent<Comic>());
 		}
     }
 
 	void Update(){
 		// Update comic num
 		comicNum = -1;
-		for(int i=0; i < comicScenes.Count; i++){
-			if(comicScenes[i].isTracking){
+		for(int i=0; i < comics.Count; i++){
+			if(comics[i].isTracking){
 				comicNum = i;
 				break;
 			}
 		}
-			
-		print(comicNum);
+
+
+
 	}
 
+	/// <summary>
+	/// Moves current comic n scenes
+	/// </summary>
+	/// <param name="n"></param>
 	public void MoveScene(int n){
 
 		if(comicNum < 0){
 			return;
 		}
 
-		comicScenes[comicNum].MoveScene(n);
+		comics[comicNum].MoveScene(n);
+	}
+
+	public string GetCurrTitle() {
+		if(comicNum < 0){
+			return "";
+		}
+		return comics[comicNum].title;
 	}
 }

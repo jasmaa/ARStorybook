@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
 
-public class ComicScene : MonoBehaviour, ITrackableEventHandler
+/// <summary>
+/// AR comic
+/// </summary>
+public class Comic : MonoBehaviour, ITrackableEventHandler
 {
 
 	private TrackableBehaviour trackableBehaviour;
 	public bool isTracking = false;
-	public int currScene = 0;
-	public int maxScenes;
+	public int currSceneNum = 0;
+	public string title;
+
+	public GameObject[] comicScenes;
+	private GameObject currScene;
 
     // Start is called before the first frame update
     void Start()
@@ -18,18 +24,28 @@ public class ComicScene : MonoBehaviour, ITrackableEventHandler
 		if(trackableBehaviour){
 			trackableBehaviour.RegisterTrackableEventHandler(this);
 		}
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-	public void MoveScene(int n){
-		currScene = Mathf.Clamp(currScene + n, 0, maxScenes);
+		// init comic scene
+		currScene = Instantiate(comicScenes[currSceneNum], this.transform);
 	}
 
+	/// <summary>
+	/// Moves scene n places
+	/// </summary>
+	/// <param name="n"></param>
+	public void MoveScene(int n){
+		currSceneNum = Mathf.Clamp(currSceneNum + n, 0, comicScenes.Length - 1);
+
+		// Replace comic scene
+		Destroy(currScene);
+		currScene = Instantiate(comicScenes[currSceneNum], this.transform);
+	}
+
+	/// <summary>
+	/// Detects if tracking current comic scene
+	/// </summary>
+	/// <param name="previousStatus"></param>
+	/// <param name="newStatus"></param>
 	public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus,TrackableBehaviour.Status newStatus)
 	{
 		if (newStatus == TrackableBehaviour.Status.DETECTED ||
