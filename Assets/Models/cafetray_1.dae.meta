@@ -1,76 +1,42 @@
 fileFormatVersion: 2
-guid: de744347469ffd54ab5f6909d2c320e7
+guid: cefc77a61a8ba934a9c041999c9c7068
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Box14538
-    100004: Box14539
-    100006: Box14540
-    100008: Box14541
-    100010: Box14542
-    100012: Box14543
-    100014: Box14544
-    100016: Box14545
-    100018: Box14546
-    100020: Box14547
-    100022: Box14548
-    400000: //RootNode
-    400002: Box14538
-    400004: Box14539
-    400006: Box14540
-    400008: Box14541
-    400010: Box14542
-    400012: Box14543
-    400014: Box14544
-    400016: Box14545
-    400018: Box14546
-    400020: Box14547
-    400022: Box14548
-    2100000: Box14538Mat
-    2100002: Box14539Mat
-    2100004: Box14540Mat
-    2100006: Box14541Mat
-    2100008: Box14542Mat
-    2100010: Box14543Mat
-    2100012: Box14544Mat
-    2100014: Box14545Mat
-    2100016: Box14546Mat
-    2100018: Box14547Mat
-    2100020: Box14548Mat
-    2300000: Box14538
-    2300002: Box14539
-    2300004: Box14540
-    2300006: Box14541
-    2300008: Box14542
-    2300010: Box14543
-    2300012: Box14544
-    2300014: Box14545
-    2300016: Box14546
-    2300018: Box14547
-    2300020: Box14548
-    3300000: Box14538
-    3300002: Box14539
-    3300004: Box14540
-    3300006: Box14541
-    3300008: Box14542
-    3300010: Box14543
-    3300012: Box14544
-    3300014: Box14545
-    3300016: Box14546
-    3300018: Box14547
-    3300020: Box14548
-    4300000: Box14538
-    4300002: Box14539
-    4300004: Box14540
-    4300006: Box14541
-    4300008: Box14542
-    4300010: Box14543
-    4300012: Box14544
-    4300014: Box14545
-    4300016: Box14546
-    4300018: Box14547
-    4300020: Box14548
+    100000: Bowl
+    100002: Bowl2
+    100004: //RootNode
+    100006: Food1
+    100008: Food2
+    100010: MilkCarton
+    100012: Tray
+    400000: Bowl
+    400002: Bowl2
+    400004: //RootNode
+    400006: Food1
+    400008: Food2
+    400010: MilkCarton
+    400012: Tray
+    2100000: No Name
+    2100002: Material
+    2300000: Bowl
+    2300002: Bowl2
+    2300004: Food1
+    2300006: Food2
+    2300008: MilkCarton
+    2300010: Tray
+    3300000: Bowl
+    3300002: Bowl2
+    3300004: Food1
+    3300006: Food2
+    3300008: MilkCarton
+    3300010: Tray
+    4300000: Tray
+    4300002: MilkCarton
+    4300004: Bowl
+    4300006: Food1
+    4300008: Bowl2
+    4300010: Food2
   externalObjects: {}
   materials:
     importMaterials: 1

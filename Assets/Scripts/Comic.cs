@@ -34,7 +34,12 @@ public class Comic : MonoBehaviour, ITrackableEventHandler
 	/// </summary>
 	/// <param name="n"></param>
 	public void MoveScene(int n){
-		currSceneNum = Mathf.Clamp(currSceneNum + n, 0, comicScenes.Length - 1);
+
+		if(currSceneNum + n < 0 || currSceneNum + n >= comicScenes.Length) {
+			return;
+		}
+
+		currSceneNum += n;
 
 		// Replace comic scene
 		Destroy(currScene);
